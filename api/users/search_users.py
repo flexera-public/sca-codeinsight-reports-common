@@ -13,6 +13,16 @@ import requests
 logger = logging.getLogger(__name__)
 
 #------------------------------------------------------------------------------------------#
+def get_user_details_by_login(baseURL, authToken, login):
+    logger.info("Entering get_user_details_by_login")
+
+    APIOPTIONS = "?login=" + login
+    userDetails = get_user_details(baseURL, authToken, APIOPTIONS)
+
+    return userDetails
+
+
+#------------------------------------------------------------------------------------------#
 def get_user_details_by_id(baseURL, authToken, userID):
     logger.info("Entering get_user_details_by_id")
 
