@@ -29,6 +29,7 @@ def create_project_heirarchy(baseURL, authToken, projectID, includeChildProjects
     nodeDetails["projectName"] = projectName
     nodeDetails["projectID"] = projectID
     nodeDetails["projectLink"] = baseURL + "/codeinsight/FNCI#myprojectdetails/?id=" + str(projectID) + "&tab=projectInventory"
+    nodeDetails["inventoryLinkBase"] = nodeDetails["projectLink"]  + "&pinv="
 
     projectList.append(nodeDetails)
 
@@ -54,6 +55,7 @@ def manage_child_projects(project, parentID, projectList, baseURL):
             nodeDetails["parent"] = parentID
             nodeDetails["projectName"] = childProject["name"]
             nodeDetails["projectLink"] = baseURL + "/codeinsight/FNCI#myprojectdetails/?id=" + str(childProject["id"]) + "&tab=projectInventory"
+            nodeDetails["inventoryLinkBase"] = nodeDetails["projectLink"]  + "&pinv="
 
             projectList.append( nodeDetails )
 
