@@ -24,7 +24,7 @@ def get_component_details_with_options(baseURL, componentVersionID, authToken, A
     logger.info("Entering get_component_version_vulnerabilities with options")
 
     RESTAPI_BASEURL = baseURL + "/codeinsight/api/"
-    ENDPOINT_URL = RESTAPI_BASEURL + "components/" + str(componentVersionID) + "/vulnerabilities" + "?page=" 
+    ENDPOINT_URL = RESTAPI_BASEURL + "components/" + str(componentVersionID) + "/vulnerabilities" + "?offset=" 
     RESTAPI_URL = ENDPOINT_URL + "1" + APIOPTIONS
     logger.debug("    RESTAPI_URL: %s" %RESTAPI_URL)
     
