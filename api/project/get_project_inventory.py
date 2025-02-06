@@ -50,6 +50,13 @@ def get_project_inventory_details_without_vulnerabilities(baseURL, projectID, au
     return projectInventory
 
 #------------------------------------------------------------------------------------------#
+def get_project_inventory_details_with_copyrights(baseURL, projectID, authToken):
+    logger.info("Entering get_project_inventory_details_without_vulnerabilities")
+    APIOPTIONS = "&skipVulnerabilities=true&includeCopyrights=true"
+    projectInventory = get_project_inventory_details_with_options(baseURL, projectID, authToken, APIOPTIONS)
+    return projectInventory
+
+#------------------------------------------------------------------------------------------#
 def get_project_inventory_details_with_options(baseURL, projectID, authToken, APIOPTIONS):
     logger.info("Entering get_project_inventory_details_with_options")
 
